@@ -10,7 +10,24 @@
                                                                                           
 ### 困难
 - [4](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution4.java)
+### 二分法
+4，33，34，35，29
+### 双指针
+1，11，13，16，18，26，27，31，42
+### 回溯
+40，
+####9.8
+解题：39.组合总和
+#### 9.7
+复习：4, 26,27，35
+解题：29
 
+#### 9.6
+复习：26，27
+解题：34
+
+#### 9.4
+复习：1，4，11，15，16，18
 #### 9.3
 解题： [31](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution31.java),
 [33](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution33.java)
