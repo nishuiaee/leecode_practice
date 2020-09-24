@@ -1,16 +1,16 @@
 # Leecode算法
-## 数组类型(双指针)
+## 数组类型
 ### 简单
 - 724，35，278，1，88, [26](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution26.java),
  [27](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution27.java),
 ### 中等
 -  [11](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution11.java),[15](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution15.java) ,[16](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution16.java) ,
 [18](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution18.java) ,[31](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution31.java),[33](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution33.java) ,
-
+54,55
                                                                                           
 ### 困难
 - [4](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution4.java)
-，42，
+，42，45
 ### 二分法
 4，33，34，35，29
 ### 双指针
@@ -20,6 +20,9 @@
 ### 回溯
 39,40，
 
+## 9.23
+ 解题：45，54，55
+ 复习：70，面试题08.01
 ### 9.14
 解题：42，
 复习：41，
