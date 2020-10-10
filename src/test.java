@@ -7,8 +7,7 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        int a = 0;
-        Integer b = null;
-        System.out.print(a == b);
+       boolean[] a = new boolean[10];
+       System.out.println(a[0]);
     }
 }
