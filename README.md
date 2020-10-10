@@ -6,15 +6,15 @@
 ### 中等
 -  [11](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution11.java),[15](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution15.java) ,[16](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution16.java) ,
 [18](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution18.java) ,[31](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution31.java),[33](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution33.java) ,
-54,55
+54,55,153
                                                                                           
 ### 困难
 - [4](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution4.java)
-，42，45
+，42，45,154
 ## 链表 
  2,445,206,92
 ## 二分法
-4，33，34，35，29
+4，33，34，35，29,153,154
 ## 双指针
 1，11，13，16，18，26，27，31，42
 ## 动态规划
