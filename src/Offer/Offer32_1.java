@@ -28,6 +28,7 @@ public class Offer32_1 {
         for (int num : list) {
             nums[i++] = num;
         }
+
         return nums;
 
     }
