@@ -9,51 +9,47 @@ import java.util.Arrays;
  **/
 public class Exchange {
 
-    public void bubbleSort(int[] num) {
-       int length = num.length;
-       boolean flag = true;
+    public void bubbleSort(int[] nums) {
+        boolean flag = true;
+        int length = nums.length;
 
-       for (int i = 1; i < length && flag; i++) {
-           flag = false;
-           for( int j = 0; j < length - i ; j++) {
-               if(num[j] > num[j + 1])
-               {
-                   flag = true;
-                   int temp = num[j];
-                   num[j] = num[j+1];
-                   num[j+1] = temp;
-               }
-           }
-       }
-    }
-    public void quickSort(int[] num) {
-        quickSort(num, 0, num.length - 1);
+        for (int i = 1; i < length && flag; i++)
+        {
+            flag = false;
+            for (int j = 0; j < length - i; j++) {
+                if (nums[j] > nums[j + 1]) {
+                    flag = true;
+                    int temp = nums[j];
+                    nums[j] = nums[j + 1];
+                    nums[j + 1] = temp;
+                }
+            }
+        }
     }
 
-    public void quickSort(int[] num, int start, int end) {
-       int length = num.length;
-       if (start < end) {
-           int i = start, j = end;
-           int vot = num[i];
-           while (i!=j) {
-               while (i < j && num[j] >= vot ) j--;
-               if (i < j) {
-                   num[i++] = num[j];
-               }
-               while (i < j && num[i] <= vot) i++;
-               if (i < j) {
-                   num[j--] = num[i];
-               }
-           }
-           num[i] = vot;
-           quickSort(num,start,i - 1);
-           quickSort(num,i + 1,end);
-       }
+    public void quickSort(int[] nums) {
+        quickSort(nums, 0, nums.length - 1);
+    }
+    private void quickSort(int[] nums,int start,int end) {
+        int len = nums.length;
+        if (start < end) {
+            int i = start,j = end;
+            int vot = nums[i];
+            while (i != j) {
+                while (i < j && nums[j] >= vot) j--;
+                if (i < j) nums[i++] = nums[j];
+                while (i < j && nums[i] <= vot) i++;
+                if (i < j) nums[j--] = nums[i];
+            }
+            nums[i] = vot;
+            quickSort(nums,start,i-1);
+            quickSort(nums,i + 1, end);
+        }
     }
 
     public static void main(String[] args) {
         int[] num = {1,4,5,6,3,1,5,624,54324,14,141};
-        new Exchange().bubbleSort(num);
+        new Exchange().quickSort(num);
         System.out.println(Arrays.toString(num));
     }
 }
