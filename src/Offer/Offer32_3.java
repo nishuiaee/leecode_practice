@@ -2,6 +2,7 @@ package Offer;
 
 import Common.TreeNode;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -13,17 +14,17 @@ import java.util.List;
  **/
 public class Offer32_3 {
     public List<List<Integer>> levelOrder(TreeNode root) {
+        if (root == null) return new ArrayList<>();
         List<List<Integer>> res = new LinkedList<>();
         Deque<TreeNode> deque = new LinkedList<>();
-        deque.add(root);
         boolean flag = true;
-
+        deque.add(root);
         while (!deque.isEmpty()) {
-            LinkedList<Integer> temp = new LinkedList<>();
-            for (int i = deque.size(); i > 0; i--) {
+            LinkedList<Integer> temp = new LinkedList();
+            for (int i = deque.size(); i > 0 ; i--) {
                 TreeNode node = deque.poll();
                 if (flag) {
-                    temp.add(node.val);
+                    temp.addLast(node.val);
                 } else {
                     temp.addFirst(node.val);
                 }

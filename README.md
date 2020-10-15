@@ -1,4 +1,6 @@
 # Leecode算法
+## 10.16复习
+希尔排序，验证回文串
 ## 数组类型
 ### 简单
 - 724，35，278，1，88, [26](https://github.com/ivileey/leecode_practice/tree/master/src/numSum/Solution26.java),

@@ -28,25 +28,24 @@ public class Exchange {
     }
 
     public void quickSort(int[] nums) {
-        quickSort(nums, 0, nums.length - 1);
+        quickSort(nums,0,nums.length - 1);
     }
-    private void quickSort(int[] nums,int start,int end) {
+    private void quickSort (int[] nums, int start, int end) {
         int len = nums.length;
         if (start < end) {
-            int i = start,j = end;
+            int i = start, j = end;
             int vot = nums[i];
             while (i != j) {
-                while (i < j && nums[j] >= vot) j--;
+                while (i < j && nums[j] >= vot ) j--;
                 if (i < j) nums[i++] = nums[j];
                 while (i < j && nums[i] <= vot) i++;
                 if (i < j) nums[j--] = nums[i];
             }
             nums[i] = vot;
-            quickSort(nums,start,i-1);
-            quickSort(nums,i + 1, end);
+            quickSort(nums,start,i - 1);
+            quickSort(nums,i + 1,end);
         }
     }
-
     public static void main(String[] args) {
         int[] num = {1,4,5,6,3,1,5,624,54324,14,141};
         new Exchange().quickSort(num);

@@ -6,4 +6,5 @@ package Practice10_14;
  * @create: 2020-10-14 22:11
  **/
 public class Practice9 {
+
 }

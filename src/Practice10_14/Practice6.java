@@ -11,23 +11,23 @@ import java.util.HashMap;
  * @create: 2020-10-14 20:51
  **/
 public class Practice6 {
-    public HashMap<Node,Node> vistednode = new HashMap<>();
+    private HashMap<Node,Node> hashMap = new HashMap<>();
 
     public Node copyRandomList(Node head) {
+        if (head == null) return null;
 
-        if (head == null) {
-            return null;
+        if (hashMap.containsKey(head)) {
+            return hashMap.get(head);
         }
-
-        if (vistednode.containsKey(head)) return vistednode.get(head);
 
         Node node = new Node(head.val);
 
-        vistednode.put(head,node);
+        hashMap.put(head,node);
 
         node.next = copyRandomList(head.next);
         node.random = copyRandomList(head.random);
 
         return node;
     }
+
 }

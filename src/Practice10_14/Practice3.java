@@ -7,15 +7,13 @@ package Practice10_14;
  **/
 public class Practice3 {
     public int maxProfit(int[] prices) {
-        int minprice = Integer.MAX_VALUE;
-        int maxprice = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] <= minprice) {
-                minprice = prices[i];
-            } else {
-                maxprice = (prices[i] - minprice) > maxprice ? (prices[i] - minprice) : maxprice;
-            }
-        }
-        return maxprice;
+       int minprice = Integer.MAX_VALUE;
+       int maxpricae = 0;
+       for (int i = 0; i < prices.length; i++) {
+           minprice = Math.min(minprice, prices[i]);
+           prices[i] = prices[i] - minprice;
+           maxpricae = Math.max(maxpricae, prices[i]);
+       }
+       return maxpricae;
     }
 }
