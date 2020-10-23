@@ -6,17 +6,26 @@ import java.util.List;
 
 public class test {
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>(300);
-        for(int i = 1; i < 200; i++) {
-            list.add(i);
+        List<String> list = new ArrayList<>();
+        list.add("aaa");
+        list.add("bbb");
+        list.add("ccc");
+        list.add("dddd");
+        Iterator<String> iterator = list.iterator();
+        iterator.hasNext();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
+            list.set(0,"2222");
+            System.out.println(str);
         }
-        Iterator<Integer> iterator  = list.iterator();
-
-        for (int i = 50; i < 60; i++) {
-            int a = iterator.next();
-
-            iterator.remove();
+        for (String str : list) {
+//            if (str.equals("bbb"))
+//                list.remove("bbb");
+//            if (str.equals("ccc"))
+//                list.remove("ccc");
+//            if (str.equals("dddd"))
+//                list.remove("dddd");
         }
-       System.out.println(list.toString());
+        System.out.println(list.toString());
     }
 }
