@@ -42,6 +42,7 @@ public class Select {
             int temp = nums[max];
             nums[max] = nums[i];
             nums[i] = temp;
+            heapify(nums, max, n);
         }
     }
 

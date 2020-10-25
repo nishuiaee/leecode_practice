@@ -64,7 +64,7 @@ public class Select1 {
     }
 
     public static void main(String[] args) {
-        int[] nums = {4, 10, 3, 5, 1, 2};
+        int[] nums = {1,3,4,54,64,5,2,52,526,2,5};
         //new InsertSort().insertSort(num);
         //new InsertSort().shellSort(num);
         //new Select().build_heap(nums);
