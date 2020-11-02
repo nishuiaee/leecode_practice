@@ -1,16 +1,14 @@
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class test {
+
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-      StringBuilder s = new StringBuilder();
-      s.append(1);
-      list.add(s.toString());
-      System.out.println(s);
-      System.out.println(list.toString());
+        String s1 = new String("aaaa");
+        String s2 = s1.intern();
+        String s3 = ("aaaa");
+        System.out.println(s1 == s2);
+        System.out.println(s1 == s3);
+        System.out.println(s2 == s3);
     }
 }

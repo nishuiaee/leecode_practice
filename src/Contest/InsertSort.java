@@ -1,10 +1,4 @@
 package Contest;
-
-
-
-
-
-
 import java.util.Arrays;
 
 /**
@@ -17,8 +11,7 @@ public class InsertSort {
 
     public void insertSort (int[] nums) {
 
-        int len = nums.length;
-        for (int i = 1; i < len; i++) {
+        for (int i = 1; i < nums.length; i++) {
             int temp = nums[i];
             int j;
             for (j = i - 1; j >= 0 && nums[j] > temp; j--) {
@@ -30,23 +23,23 @@ public class InsertSort {
     }
 
     public void shellSort (int[] nums) {
-       int lens = nums.length;
-       for (int delta = lens / 2; delta > 0; delta /= 2) {
-           for (int i = delta; i < lens; i++) {
-               int temp = nums[i];
-               int j;
-               for (j = i - delta; j >= 0 && nums[j] > temp; j -= delta) {
-                   nums[j + delta] = nums[j];
-               }
-               nums[j + delta] = temp;
-           }
-       }
+        int len = nums.length;
+        for (int delta = len / 2; delta > 0; delta /= 2) {
+            for (int i = delta; i < len; i++) {
+                int temp = nums[i];
+                int j;
+                for (j = i - delta; j >= 0 && nums[j] > temp; j-=delta) {
+                    nums[j + delta] = nums[j];
+                }
+                nums[j + delta] = temp;
+            }
+        }
     }
 
     public static void main(String[] args) {
         int[] num = {1,4,5,6,3,1,5,624,54324,14,141};
-        new InsertSort().insertSort(num);
-        //new InsertSort().shellSort(num);
+        //new InsertSort().insertSort(num);
+        new InsertSort().shellSort(num);
         System.out.println(Arrays.toString(num));
     }
 }

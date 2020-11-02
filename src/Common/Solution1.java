@@ -45,7 +45,7 @@ public class Solution1 {
         Solution1 solution1 = new Solution1();
         int a = -12012210;
         //System.out.println(solution1.toDecimal(Integer.toString(a)));
-        int b =  2314;
-        System.out.println(solution1.getResult(b,8));
+        int b =  10;
+        System.out.println(solution1.getResult(b,2));
     }
 }
