@@ -1,5 +1,7 @@
 package Common;
 
+import java.util.List;
+
 /**
  * @description:
  * @author: Yuner
@@ -11,6 +13,7 @@ public class Node {
     public Node random;
     public Node right;
     public Node left;
+    public List<Node> children;
 
     public Node(int val) {
         this.val = val;
@@ -27,6 +30,11 @@ public class Node {
         val = _val;
         next = _next;
         random = _random;
+    }
+
+    public Node(int _val, List<Node> _children) {
+        val = _val;
+        children = _children;
     }
 
 

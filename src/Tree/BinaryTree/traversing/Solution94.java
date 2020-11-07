@@ -3,10 +3,7 @@ package Tree.BinaryTree.traversing;
 import Common.TreeNode;
 import com.sun.source.tree.Tree;
 
-import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @description: 二叉树中序遍历
@@ -34,13 +31,29 @@ public class Solution94 {
                 stack.push(cur);
                 cur = cur.left;
             }
-            TreeNode node = stack.pop();
-            res.add(node.val);
-            if (node.right != null) {
-                cur = node.right;
+            cur = stack.pop();
+            res.add(cur.val);
+            if (cur.right != null) {
+                cur = cur.right;
             }
         }
         return res;
+    }
+
+    public List<Integer> solution3(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pop();
+                list.add(cur.val);
+                cur = cur.right;
+            }
+        }
+        return list;
     }
 
 }
