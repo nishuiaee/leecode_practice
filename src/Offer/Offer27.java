@@ -16,5 +16,4 @@ public class Offer27 {
         return root;
     }
 
-
 }
