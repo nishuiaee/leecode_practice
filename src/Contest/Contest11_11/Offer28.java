@@ -1,37 +1,37 @@
-package Offer;
+package Contest.Contest11_11;
 
 import Common.TreeNode;
 
 import java.util.Stack;
 
 /**
- * @description: 28.对称的二叉树
+ * @description:
  * @author: Yuner
- * @create: 2020-10-13 19:06
+ * @create: 2020-11-11 10:21
  **/
 public class Offer28 {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
-        return validate(root.left, root.right);
+        return dfs(root.left, root.right);
     }
-    private boolean validate(TreeNode A, TreeNode B) {
+
+    private boolean dfs(TreeNode A, TreeNode B) {
         if (A == null && B == null) return true;
         if (A == null || B == null || A.val != B.val) return false;
-        return validate(A.left,B.right) && validate(A.right, B.left);
+        return dfs(A.left, B.right) && dfs(A.right, B.left);
     }
 
-    public boolean solution2(TreeNode root) {
+    private boolean solution2 (TreeNode root) {
         if (root == null) return true;
         Stack<TreeNode> stack = new Stack<>();
-
         stack.push(root.left);
         stack.push(root.right);
-
         while (!stack.isEmpty()) {
-            TreeNode left = stack.pop();
             TreeNode right = stack.pop();
+            TreeNode left = stack.pop();
             if (left == null && right == null) continue;
-            if (left == null || right == null || left.val != right.val) return false;
+            if (left == null || right == null ||right.val != left.val)
+                return false;
             stack.push(left.left);
             stack.push(right.right);
             stack.push(left.right);

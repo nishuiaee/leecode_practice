@@ -1,4 +1,4 @@
-package Contest;
+package A_PASS;
 
 import Common.TreeNode;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
 /**
  * @description:
  * @author: Yuner
- * @create: 2020-11-09 15:03
+ * @create: 2020-11-11 10:19
  **/
 public class Offer07 {
     HashMap<Integer, Integer> map = new HashMap<>();
@@ -19,14 +19,12 @@ public class Offer07 {
         }
         return build(0, 0, inorder.length - 1);
     }
-    public TreeNode build(int pre, int in_left, int in_right) {
-        if (in_left > in_right) {
-            return null;
-        }
-        TreeNode root = new TreeNode(po[pre]);
+    public TreeNode build(int pre, int in_index, int in_end) {
+        if (in_index > in_end) return null;
+        TreeNode node = new TreeNode(po[pre]);
         int i = map.get(po[pre]);
-        root.left = build(pre + 1, in_left,i - 1);
-        root.right = build(i + 1 - in_left + pre, i + 1, in_right);
-        return root;
+        node.left = build(pre + 1, in_index, i - 1);
+        node.right = build(pre + i + 1 - in_index, i + 1, in_end);
+        return node;
     }
 }

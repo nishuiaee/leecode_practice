@@ -2,8 +2,10 @@ package Contest;
 
 import Common.TreeNode;
 
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * @description:
@@ -12,15 +14,16 @@ import java.util.Queue;
  **/
 public class Offer27 {
     public TreeNode mirrorTree(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
+        if (root == null) return null;
+        Deque<TreeNode> deque = new LinkedList<>();
+        deque.add(root);
+        while (!deque.isEmpty()) {
+            TreeNode node = deque.poll();
             TreeNode left = node.left;
             node.left = node.right;
             node.right = left;
-            if (node.left != null) queue.add(node.left);
-            if (node.right != null) queue.add(node.right);
+            if (node.left != null) deque.add(node.left);
+            if (node.right != null) deque.add(node.right);
         }
         return root;
     }

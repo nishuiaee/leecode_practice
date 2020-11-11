@@ -1,11 +1,11 @@
-package Offer;
+package Contest;
 
 import Common.TreeNode;
 
 /**
  * @description:
  * @author: Yuner
- * @create: 2020-11-04 15:29
+ * @create: 2020-11-10 20:39
  **/
 public class Offer68_2 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

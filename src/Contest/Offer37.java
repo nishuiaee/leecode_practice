@@ -14,39 +14,34 @@ public class Offer37 {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-       StringBuffer sb = new StringBuffer();
-       serialize(root, sb);
-       return sb.toString();
+        StringBuilder sb = new StringBuilder();
+        serialize(root, sb);
+        return sb.toString();
     }
-
-    public void serialize (TreeNode root, StringBuffer sb) {
+    public void serialize(TreeNode root, StringBuilder sb) {
         if (root == null) {
             sb.append("#").append(",");
             return ;
         }
-        sb.append(root.val);
+        sb.append(root.val).append(",");
         serialize(root.left, sb);
         serialize(root.right, sb);
     }
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-        LinkedList<String> nodes = new LinkedList<>();
-        for (String node : data.split(",")) {
-            nodes.add(node);
+        LinkedList<String> list = new LinkedList<>();
+        for (String s : data.split(",")) {
+            list.add(s);
         }
-
-        return deserialize(nodes);
+        return deserialize(list);
     }
-
-    public TreeNode deserialize(LinkedList<String> nodes) {
-        if (nodes.isEmpty()) return null;
-        String first = nodes.removeFirst();
-        if(first.equals("#")) return null;
-        TreeNode treeNode = new TreeNode(Integer.parseInt(first));
-
-        treeNode.left = deserialize(nodes);
-        treeNode.right = deserialize(nodes);
-        return treeNode;
+    public TreeNode deserialize(LinkedList<String> list) {
+        String first = list.removeFirst();
+        if (first.equals("#")) return null;
+        TreeNode node = new TreeNode(Integer.parseInt(first));
+        node.left = deserialize(list);
+        node.right = deserialize(list);
+        return node;
     }
 }
