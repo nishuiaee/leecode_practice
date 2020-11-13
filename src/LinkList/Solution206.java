@@ -6,24 +6,25 @@ package LinkList;
  * @create: 2020-10-07 20:31
  **/
 public class Solution206 {
-    public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode cur = head;
-        while (cur != null) {
-            ListNode tempNode = cur.next;
-            cur.next = prev;
-            prev = cur;
-        }
-        return prev;
+    //迭代
+    public ListNode reverseList1(ListNode head) {
+       ListNode pre = null, cur = head;
+       while (cur != null) {
+          ListNode next = cur.next;
+          cur.next = pre;
+          pre = cur;
+          cur = next;
+      }
+       return pre;
     }
-
-    public ListNode reverseList2(ListNode head) {
+    //递归
+    public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        ListNode p = reverseList2(head.next);
+        ListNode last = reverseList(head.next);
         head.next.next = head;
         head.next = null;
-        return p;
+        return last;
     }
 }
