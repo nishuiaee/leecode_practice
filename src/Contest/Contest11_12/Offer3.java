@@ -1,39 +1,33 @@
-package Offer;
+package Contest.Contest11_12;
 
-import java.util.HashSet;
+import java.util.HashMap;
 
 /**
- * @description: 03.数组中重复的数字
+ * @description:
  * @author: Yuner
- * @create: 2020-10-10 09:58
+ * @create: 2020-11-12 09:34
  **/
-public class Offer03 {
-    //使用哈希表
+public class Offer3 {
     public int findRepeatNumber(int[] nums) {
-        HashSet<Integer> hashSet = new HashSet<>();
-        hashSet.add(nums[0]);
-
-        for (int i = 1; i < nums.length; i++) {
-            if (hashSet.contains(nums[i])) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i]))
                 return nums[i];
-            }
-            hashSet.add(nums[i]);
-        }
-        return 0;
-    }
-    //使用临时数组
-    public int solution2(int[] nums) {
-        int len = nums.length;
-        int[] temp = new int[len];
-        for (int i = 0; i < len; i++) {
-            temp[nums[i]]++;
-            if (temp[nums[i]] > 1) {
-                return nums[i];
-            }
+            map.put(nums[i], i);
         }
         return -1;
     }
-    //原地交换
+    public int solution2(int[] nums) {
+        int len = nums.length;
+        int[] temp = new int[len];
+        for (int i = 0; i < len; i++ ) {
+            temp[nums[i]]++;
+            if (temp[nums[i]] > 1)
+                return nums[i];
+        }
+        return -1;
+    }
+
     public int solution3(int[] nums) {
         for(int i = 0; i < nums.length; i++) {
             if (i == nums[i])
@@ -44,7 +38,6 @@ public class Offer03 {
             int temp = nums[nums[i]];
             nums[nums[i]] = nums[i];
             nums[i] = temp;
-            i--;
         }
         return -1;
     }
