@@ -1,11 +1,14 @@
-package LinkList;
+package Contest.Contest11_13;
+
+import LinkList.ListNode;
 
 /**
- * @description: 25.K个一组翻转链表
+ * @description:
  * @author: Yuner
- * @create: 2020-10-20 10:01
+ * @create: 2020-11-14 16:07
  **/
 public class Solution25 {
+
     //递归解法
     public ListNode reverseKGroup(ListNode head, int k) {
         if (head == null)
@@ -51,5 +54,4 @@ public class Solution25 {
         }
         return pre;
     }
-
 }
