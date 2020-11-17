@@ -10,24 +10,22 @@ import java.util.List;
  **/
 public class Solution22 {
     public List<String> generateParenthesis(int n) {
-        List<String> list = new ArrayList<>();
-        backtrack(list,new StringBuilder(),0,0,n);
-        return list;
+        List<String> res = new ArrayList<>();
+        dfs(res, n, n, "");
+        return res;
     }
-    private void backtrack (List<String> ans, StringBuilder cur, int open, int close, int max) {
-        if (cur.length() == max * 2) {
-            ans.add(cur.toString());
+
+    private void dfs(List<String> res, int left, int right, String curStr) {
+        if (left == 0 && right == 0) {
+            res.add(curStr);
             return;
         }
-        if (open < max) {
-            cur.append('(');
-            backtrack(ans, cur, open + 1, close, max);
-            cur.deleteCharAt(cur.length() - 1);
-        }
-        if (close < open) {
-            cur.append(')');
-            backtrack(ans,cur,open,close + 1, max);
-            cur.deleteCharAt(cur.length() - 1);
-        }
+
+        if (left < 0)
+            return;
+        if (right < left)
+            return;
+        dfs(res, left - 1, right, curStr + "(");
+        dfs(res, left, right - 1, curStr + ")");
     }
 }
