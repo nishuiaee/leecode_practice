@@ -1,6 +1,7 @@
 package Sort;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @description: 冒泡排序和快速排序
@@ -33,6 +34,10 @@ public class Exchange {
     private void quickSort (int[] nums, int start, int end) {
         if (start < end) {
             int i = start, j = end;
+            int rand = new Random().nextInt(j - i + 1) + i;
+            int temp = nums[rand];
+            nums[rand] = nums[i];
+            nums[i] = temp;
             int vot = nums[i];
             while (i != j) {
                 while (i < j && nums[j] >= vot ) j--;

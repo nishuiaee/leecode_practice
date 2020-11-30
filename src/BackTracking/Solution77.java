@@ -21,7 +21,7 @@ public class Solution77 {
             res.add(new LinkedList<>(path));
             return;
         }
-        for (int i = start; i <= n - k + 1; i++) {
+        for (int i = start; i <= n; i++) {
             path.add(i);
             backtrack(res, n, k - 1, i + 1, path);
             path.remove(path.size() - 1);
